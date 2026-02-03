@@ -65,7 +65,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         },
         {
           title: "我的建議",
-          content: "整體報酬率累計已達 81.27%。這體現了我們定期檢視、隨時因應市場調整標的的意義。目前科技產業的長線動能還是很強，既然已經抓對了趨勢，建議可以多提撥一點資金，再累積更大的本金，未來獲利會更明顯。"
+          content: "整體報酬率累計已達 81.27%。這體現了我們定期檢視、隨時應應市場調整標的的意義。目前科技產業的長線動能還是很強，既然已經抓對了趨勢，建議可以多提撥一點資金，再累積更大的本金，未來獲利會更明顯。"
         }
       ]
     },
@@ -413,7 +413,7 @@ const App: React.FC = () => {
             <div className="relative group">
               <input 
                 type="text" 
-                placeholder="輸入『姓名+密碼』如：余忠祐851224" 
+                placeholder="請輸入專屬服務識別碼" 
                 value={searchName}
                 onChange={(e) => setSearchName(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
