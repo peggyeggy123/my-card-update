@@ -89,7 +89,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         },
         {
           title: "核心持股表現",
-          content: "「安聯台灣大壩」表現相當亮眼，累積報酬率已來到 122.56%。總體帳戶價值從去年 2 月初的 89,495 成長到現在的 175,810。""
+          content: "「安聯台灣大壩」表現相當亮眼，累積報酬率已來到 122.56%。總體帳戶價值從去年 2 月初的 89,495 成長到現在的 175,810。"
         },
         {
           title: "我的建議",
@@ -108,16 +108,26 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     }
   },
-  "王小明": {
+  "陳美玲": {
     investment: {
-      date: "2024/12/20",
-      imageUrl: "https://api.a0.dev/assets/image?text=stock%20market%20growth%20chart&aspect=16:9",
-      sections: [{ title: "概況", content: "投資進度正常，繼續保持。" }]
+      date: "2025/02/10",
+      imageUrl: "https://api.a0.dev/assets/image?text=conservative%20investment%20portfolio%20dividend%20growth&aspect=16:9",
+      sections: [
+        {
+          title: "退休金準備進度",
+          content: "美玲您好，目前您的退休規劃帳戶達成率已來到 65%，本月配息收益穩定撥入，現金流狀況非常健康。"
+        }
+      ]
     },
     medical: {
-      date: "2024/11/10",
-      imageUrl: "https://api.a0.dev/assets/image?text=health%20protection%20icon&aspect=16:9",
-      sections: [{ title: "保障", content: "保單生效中，目前無需調整。" }]
+      date: "2025/02/10",
+      imageUrl: "https://api.a0.dev/assets/image?text=family%20health%20insurance%20plan%20overview&aspect=16:9",
+      sections: [
+        {
+          title: "家庭保障總結",
+          content: "您的家庭保單檢視已完成。除了您個人的醫療保障外，孩子的新增意外險也已順利承保。"
+        }
+      ]
     }
   }
 };
@@ -240,22 +250,24 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 績效截圖 */}
-                <div className="mb-10">
-                  <div className={`flex items-center gap-2 mb-4 ${activeCategory === 'investment' ? 'text-amber-500/70' : 'text-blue-500/70'}`}>
-                    <ImageIcon size={16} />
-                    <span className="text-[11px] font-black tracking-widest uppercase italic">
-                      {activeCategory === 'investment' ? 'Market Performance Snapshot' : 'Protection Coverage Snapshot'}
-                    </span>
+                {/* 績效截圖 - 只有當不是「無」的時候才顯示 */}
+                {currentCategoryData.imageUrl !== "無" && (
+                  <div className="mb-10">
+                    <div className={`flex items-center gap-2 mb-4 ${activeCategory === 'investment' ? 'text-amber-500/70' : 'text-blue-500/70'}`}>
+                      <ImageIcon size={16} />
+                      <span className="text-[11px] font-black tracking-widest uppercase italic">
+                        {activeCategory === 'investment' ? 'Market Performance Snapshot' : 'Protection Coverage Snapshot'}
+                      </span>
+                    </div>
+                    <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] bg-black/40">
+                      <img 
+                        src={currentCategoryData.imageUrl} 
+                        alt="Report Data" 
+                        className="w-full h-auto object-cover min-h-[180px]"
+                      />
+                    </div>
                   </div>
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] bg-black/40">
-                    <img 
-                      src={currentCategoryData.imageUrl} 
-                      alt="Report Data" 
-                      className="w-full h-auto object-cover min-h-[180px]"
-                    />
-                  </div>
-                </div>
+                )}
 
                 {/* 分段報告內容 */}
                 <div className="space-y-6 mb-12">
