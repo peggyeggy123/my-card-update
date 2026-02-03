@@ -22,7 +22,8 @@ import {
   Clock,
   Image as ImageIcon,
   ChevronDown,
-  Target
+  Target,
+  Activity
 } from 'lucide-react';
 import { ServiceItem, ContactInfo } from './types';
 
@@ -35,50 +36,89 @@ interface ReportSection {
   content: string;
 }
 
-interface ClientReport {
-  content?: string; // 保留舊有的長文字支援
-  sections?: ReportSection[]; // 新增：分段功能
+interface CategoryData {
   date: string;
   imageUrl: string;
+  sections: ReportSection[];
+}
+
+interface ClientReport {
+  investment: CategoryData;
+  medical: CategoryData;
 }
 
 const CLIENT_REPORTS: Record<string, ClientReport> = {
   "余忠祐": {
-    date: "2025/02/03",
-    imageUrl: "https://i.postimg.cc/QNS7zhP0/S-19816482.jpg",
-    sections: [
-      {
-        title: "績效總結回顧",
-        content: "忠祐您好，這是為您整理的最新投資績效摘要。目前您的整體資產配置表現穩健，特別是我們去年 7 月做的標的轉換，現在看來是非常正確的決定。"
-      },
-      {
-        title: "核心持股表現",
-        content: "「(新)安聯台灣科技」表現最為亮眼，累積報酬率已來到 98.13%。總體帳戶價值從去年 2 月初的 123,375 成長到現在的 220,309。"
-      },
-      {
-        title: "我的建議",
-        content: "整體報酬率累計已達 81.27%。這體現了我們定期檢視、隨時因應市場調整標的的意義。目前科技產業的長線動能還是很強，既然已經抓對了趨勢，建議可以多提撥一點資金，再累積更大的本金，未來獲利會更明顯。"
-      }
-    ]
+    investment: {
+      date: "2025/02/03",
+      imageUrl: "https://i.postimg.cc/QNS7zhP0/S-19816482.jpg",
+      sections: [
+        {
+          title: "績效總結回顧",
+          content: "忠祐您好，這是為您整理的最新投資績效摘要。目前您的整體資產配置表現穩健，特別是我們去年 7 月做的標的轉換，現在看來是非常正確的決定。"
+        },
+        {
+          title: "核心持股表現",
+          content: "「(新)安聯台灣科技」表現最為亮眼，累積報酬率已來到 98.13%。總體帳戶價值從去年 2 月初的 123,375 成長到現在的 220,309。"
+        },
+        {
+          title: "我的建議",
+          content: "整體報酬率累計已達 81.27%。這體現了我們定期檢視、隨時因應市場調整標的的意義。目前科技產業的長線動能還是很強，既然已經抓對了趨勢，建議可以多提撥一點資金，再累積更大的本金，未來獲利會更明顯。"
+        }
+      ]
+    },
+    medical: {
+      date: "2025/02/03",
+      imageUrl: "無",
+      sections: [
+        {
+          title: "醫療保險資料",
+          content: "無"
+        }
+      ]
+    }
+  },
+  "葉天暐": {
+    investment: {
+      date: "2025/02/03",
+      imageUrl: "https://i.postimg.cc/85tf3g40/S-19832835.jpg",
+      sections: [
+        {
+          title: "績效總結回顧",
+          content: "天暐您好，這是為您整理的最新投資績效摘要。目前您的整體資產配置表現相當穩健！"
+        },
+        {
+          title: "核心持股表現",
+          content: "「安聯台灣大壩」表現相當亮眼，累積報酬率已來到 122.56%。總體帳戶價值從去年 2 月初的 89,495 成長到現在的 175,810。""
+        },
+        {
+          title: "我的建議",
+          content: "目前科技產業的長線動能還是很強，我們已經抓對了趨勢，恭喜您也在今年多提撥一點資金，除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利，期待下次報表更漂亮！"
+        }
+      ]
+    },
+    medical: {
+      date: "2025/02/03",
+      imageUrl: "無",
+      sections: [
+        {
+          title: "醫療保險資料",
+          content: "無"
+        }
+      ]
+    }
   },
   "王小明": {
-    date: "2024/04/15",
-    imageUrl: "https://api.a0.dev/assets/image?text=investment%20performance%20chart%20with%20professional%20data&aspect=16:9",
-    content: "小明您好，這是本月您的資產檢視報告。目前組合中科技股比重較高，建議分批獲利了結，轉入穩健債券標的。詳情請參閱下方的績效截圖。"
-  },
-  "張愛麗": {
-    date: "2024/05/22",
-    imageUrl: "https://api.a0.dev/assets/image?text=retirement%20plan%20progress%20chart%20dashboard&aspect=16:9",
-    sections: [
-      {
-        title: "計畫達成度",
-        content: "愛麗您好，這是您的年度退休計畫進度表。目前達成率為 72%，表現優於預期。"
-      },
-      {
-        title: "優化方向",
-        content: "考慮到通膨因素，下半年我們可以討論是否將部分防禦型資產轉向抗通膨債券，以確保您的退休金實質購買力。"
-      }
-    ]
+    investment: {
+      date: "2024/12/20",
+      imageUrl: "https://api.a0.dev/assets/image?text=stock%20market%20growth%20chart&aspect=16:9",
+      sections: [{ title: "概況", content: "投資進度正常，繼續保持。" }]
+    },
+    medical: {
+      date: "2024/11/10",
+      imageUrl: "https://api.a0.dev/assets/image?text=health%20protection%20icon&aspect=16:9",
+      sections: [{ title: "保障", content: "保單生效中，目前無需調整。" }]
+    }
   }
 };
 
@@ -112,6 +152,7 @@ const App: React.FC = () => {
   const [reportResult, setReportResult] = useState<ClientReport | null>(null);
   const [searchError, setSearchError] = useState(false);
   const [showReportPage, setShowReportPage] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<'investment' | 'medical'>('investment');
 
   const handleSearch = () => {
     const input = searchName.trim();
@@ -122,6 +163,7 @@ const App: React.FC = () => {
       if (result) {
         setReportResult(result);
         setSearchError(false);
+        setActiveCategory('investment'); // 預設開啟投資報告
         setShowReportPage(true);
         return;
       }
@@ -132,12 +174,15 @@ const App: React.FC = () => {
 
   const avatarSource = contact.customAvatarUrl || `./profile.jpg?t=${cacheBuster}`;
 
+  // 獲取當前顯示的資料
+  const currentCategoryData = reportResult ? reportResult[activeCategory] : null;
+
   return (
     <div className="min-h-screen bg-[#0a0f1d] flex justify-center items-start sm:py-8 font-sans">
       <div className="w-full max-w-[420px] bg-[#0c1425] min-h-screen sm:min-h-[820px] sm:rounded-[2.5rem] shadow-[0_30px_60px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col relative border border-white/5 pb-32">
         
         {/* 全螢幕專屬報告頁面 */}
-        {showReportPage && reportResult && (
+        {showReportPage && reportResult && currentCategoryData && (
           <div className="absolute inset-0 z-[100] bg-[#0c1425] flex flex-col animate-in fade-in slide-in-from-right duration-500">
             {/* 標頭 */}
             <div className="px-6 py-6 flex items-center justify-between border-b border-white/5 bg-white/[0.02] backdrop-blur-xl sticky top-0 z-50">
@@ -151,33 +196,63 @@ const App: React.FC = () => {
               <div className="w-8"></div>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-6 py-8">
-              <div className="relative z-10">
+            {/* 分類切換器 (右上區域) */}
+            <div className="px-6 mt-6">
+              <div className="flex bg-white/5 p-1.5 rounded-2xl gap-2 border border-white/5 shadow-inner">
+                <button 
+                  onClick={() => setActiveCategory('investment')}
+                  className={`flex-1 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 font-bold text-sm ${
+                    activeCategory === 'investment' 
+                      ? 'bg-amber-500 text-[#0c1425] shadow-lg scale-[1.02]' 
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <TrendingUp size={16} />
+                  投資理財
+                </button>
+                <button 
+                  onClick={() => setActiveCategory('medical')}
+                  className={`flex-1 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 font-bold text-sm ${
+                    activeCategory === 'medical' 
+                      ? 'bg-blue-500 text-white shadow-lg scale-[1.02]' 
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <Stethoscope size={16} />
+                  醫療保險
+                </button>
+              </div>
+            </div>
+
+            <div className="flex-1 overflow-y-auto px-6 py-8" key={activeCategory}>
+              <div className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 {/* 客戶標題 */}
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-[#0c1425]">
-                      <UserCheck size={20} />
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white ${activeCategory === 'investment' ? 'bg-amber-500' : 'bg-blue-500'}`}>
+                      {activeCategory === 'investment' ? <TrendingUp size={20} /> : <Activity size={20} />}
                     </div>
                     <h3 className="text-2xl font-black text-white">{searchName.slice(0, -3)} <span className="text-sm opacity-40 font-normal">VIP 尊屬</span></h3>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500 text-[12px] font-bold tracking-widest uppercase">
                     <Clock size={12} />
-                    最後更新：{reportResult.date}
+                    最後更新：{currentCategoryData.date}
                   </div>
                 </div>
 
                 {/* 績效截圖 */}
                 <div className="mb-10">
-                  <div className="flex items-center gap-2 mb-4 text-amber-500/70">
+                  <div className={`flex items-center gap-2 mb-4 ${activeCategory === 'investment' ? 'text-amber-500/70' : 'text-blue-500/70'}`}>
                     <ImageIcon size={16} />
-                    <span className="text-[11px] font-black tracking-widest uppercase italic">Market Performance Snapshot</span>
+                    <span className="text-[11px] font-black tracking-widest uppercase italic">
+                      {activeCategory === 'investment' ? 'Market Performance Snapshot' : 'Protection Coverage Snapshot'}
+                    </span>
                   </div>
                   <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.5)] bg-black/40">
                     <img 
-                      src={reportResult.imageUrl} 
-                      alt="Performance" 
-                      className="w-full h-auto object-cover"
+                      src={currentCategoryData.imageUrl} 
+                      alt="Report Data" 
+                      className="w-full h-auto object-cover min-h-[180px]"
                     />
                   </div>
                 </div>
@@ -185,45 +260,36 @@ const App: React.FC = () => {
                 {/* 分段報告內容 */}
                 <div className="space-y-6 mb-12">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="h-[1px] w-8 bg-amber-500/50"></div>
-                    <span className="font-black text-[11px] tracking-[0.2em] uppercase text-amber-500/80">顧問專業深度分析</span>
+                    <div className={`h-[1px] w-8 ${activeCategory === 'investment' ? 'bg-amber-500/50' : 'bg-blue-500/50'}`}></div>
+                    <span className={`font-black text-[11px] tracking-[0.2em] uppercase ${activeCategory === 'investment' ? 'text-amber-500/80' : 'text-blue-500/80'}`}>
+                      顧問專業深度分析
+                    </span>
                   </div>
 
-                  {/* 判斷並顯示分段內容 */}
-                  {reportResult.sections ? (
-                    reportResult.sections.map((section, idx) => (
-                      <div key={idx} className="group animate-in slide-in-from-bottom duration-500 fill-mode-both" style={{ animationDelay: `${idx * 150}ms` }}>
-                        <div className="relative bg-white/[0.03] border border-white/5 rounded-2xl p-6 transition-all group-hover:bg-white/[0.05] group-hover:border-white/10">
-                          {/* 左側修飾線 */}
-                          <div className="absolute left-0 top-6 bottom-6 w-[3px] bg-gradient-to-b from-amber-500 to-transparent rounded-full opacity-50"></div>
-                          
-                          <div className="flex items-start gap-3 mb-3">
-                            <div className="mt-1 p-1 bg-amber-500/10 rounded-lg text-amber-500">
-                               <Target size={14} />
-                            </div>
-                            <h4 className="text-white font-black text-[17px] tracking-wide">{section.title}</h4>
+                  {currentCategoryData.sections.map((section, idx) => (
+                    <div key={idx} className="group animate-in slide-in-from-bottom duration-500 fill-mode-both" style={{ animationDelay: `${idx * 150}ms` }}>
+                      <div className="relative bg-white/[0.03] border border-white/5 rounded-2xl p-6 transition-all group-hover:bg-white/[0.05] group-hover:border-white/10">
+                        <div className={`absolute left-0 top-6 bottom-6 w-[3px] rounded-full opacity-50 ${activeCategory === 'investment' ? 'bg-gradient-to-b from-amber-500 to-transparent' : 'bg-gradient-to-b from-blue-500 to-transparent'}`}></div>
+                        
+                        <div className="flex items-start gap-3 mb-3">
+                          <div className={`mt-1 p-1 rounded-lg ${activeCategory === 'investment' ? 'bg-amber-500/10 text-amber-500' : 'bg-blue-500/10 text-blue-500'}`}>
+                             <Target size={14} />
                           </div>
-                          <p className="text-gray-400 text-[15px] leading-relaxed pl-8">
-                            {section.content}
-                          </p>
+                          <h4 className="text-white font-black text-[17px] tracking-wide">{section.title}</h4>
                         </div>
+                        <p className="text-gray-400 text-[15px] leading-relaxed pl-8">
+                          {section.content}
+                        </p>
                       </div>
-                    ))
-                  ) : (
-                    /* 支援舊版 content 格式 */
-                    <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-6">
-                       <p className="text-gray-300 text-[16px] leading-relaxed whitespace-pre-line">
-                         {reportResult.content}
-                       </p>
                     </div>
-                  )}
+                  ))}
 
                   {/* 新年祝福語區塊 */}
                   <div className="pt-8 flex flex-col items-center animate-in fade-in zoom-in duration-1000 delay-500 fill-mode-both">
                     <div className="flex items-center gap-4 mb-2">
                       <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-amber-500/50"></div>
                       <span className="text-amber-500 font-black text-xl tracking-[0.3em] drop-shadow-[0_0_8px_rgba(245,158,11,0.4)]">
-                        祝福您新年快樂
+                        祝您新年快樂
                       </span>
                       <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-amber-500/50"></div>
                     </div>
