@@ -51,7 +51,7 @@ interface ClientReport {
 
 const CLIENT_REPORTS: Record<string, ClientReport> = {
   "余忠祐": {
-    password: "WTYP", // 專屬密碼更新為數字
+    password: "WTYP", 
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/QNS7zhP0/S-19816482.jpg",
@@ -82,7 +82,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "葉天暐": {
-    password: "PGJE", // 專屬密碼更新為數字
+    password: "PGJE", 
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/85tf3g40/S-19832835.jpg",
@@ -113,7 +113,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "張慎紘": {
-    password: "JENO", // 專屬密碼更新為數字
+    password: "JENO", 
      investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/wT2mxT45/S-19832845.jpg",
@@ -151,7 +151,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
 const INITIAL_CONTACT: ContactInfo = {
   name: "洪薏晴",
   company: "三商美邦人壽",
-  title: "RFA 退休理財規劃師",
+  title: "RFA 退休理財規劃",
   slogan: "用專業回應您的信任，用溫度陪伴您的日常。",
   phone: "0917979019", 
   lineId: "t-4cUJ2Op1", 
@@ -365,9 +365,10 @@ const App: React.FC = () => {
           </div>
 
           <div className="absolute bottom-10 left-8 z-20 max-w-[280px]">
-             <h1 className="text-5xl font-black text-white tracking-tighter mb-1 drop-shadow-2xl">
+             <h1 className="text-5xl font-black text-white tracking-tighter drop-shadow-2xl mb-1 animate-in fade-in slide-in-from-bottom-2 duration-1000">
                {contact.name}
              </h1>
+             
              <div className="space-y-1">
                <div className="flex items-center gap-2">
                   <span className="bg-amber-500 text-[#0c1425] px-2 py-0.5 rounded text-[12px] font-black uppercase tracking-tight shadow-lg">
@@ -377,8 +378,8 @@ const App: React.FC = () => {
                <p className="text-gray-200 text-sm font-bold tracking-wide">
                  {contact.title}
                </p>
-               {/* 服務年資：已移至 RFA 下方並改回白字 */}
-               <p className="text-gray-400 text-[11px] font-black tracking-[0.2em] uppercase opacity-80 mt-1">
+               {/* 服務年資：維持在 RFA 下方的白字樣式 */}
+               <p className="text-gray-400 text-[11px] font-black tracking-[0.2em] uppercase opacity-70 mt-1">
                  服務年資：6年
                </p>
              </div>
