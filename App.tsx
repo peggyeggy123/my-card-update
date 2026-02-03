@@ -23,7 +23,8 @@ import {
   Image as ImageIcon,
   ChevronDown,
   Target,
-  Activity
+  Activity,
+  Award
 } from 'lucide-react';
 import { ServiceItem, ContactInfo } from './types';
 
@@ -50,7 +51,7 @@ interface ClientReport {
 
 const CLIENT_REPORTS: Record<string, ClientReport> = {
   "余忠祐": {
-    password: "851224", // 專屬密碼：851224
+    password: "851224", // 專屬密碼更新為數字
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/QNS7zhP0/S-19816482.jpg",
@@ -65,7 +66,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         },
         {
           title: "我的建議",
-          content: "整體報酬率累計已達 81.27%。這體現了我們定期檢視、隨時應應市場調整標的的意義。目前科技產業的長線動能還是很強，既然已經抓對了趨勢，建議可以多提撥一點資金，再累積更大的本金，未來獲利會更明顯。"
+          content: "整體報酬率累計已達 81.27%。這體現了我們定期檢視、隨時因應市場調整標的的意義。目前科技產業長線動能還是很強，既然已經抓對了趨勢，建議可以多提撥一點資金，再累積更大的本金，未來獲利會更明顯。"
         }
       ]
     },
@@ -81,7 +82,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "葉天暐": {
-    password: "860818", // 專屬密碼：860818
+    password: "770808", // 專屬密碼更新為數字
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/85tf3g40/S-19832835.jpg",
@@ -96,7 +97,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         },
         {
           title: "我的建議",
-          content: "目前科技產業的長線動能還是很強，我們已經抓對了趨勢，恭喜您也在今年多提撥一點資金，讓組合更完整。持續定期定額，讓時間幫我們複利！"
+          content: "目前科技產業長線動能還是很強，我們已經抓對了趨勢，恭喜您也在今年多提撥一點資金，讓組合更完整。持續定期定額，讓時間幫我們複利！"
         }
       ]
     },
@@ -112,7 +113,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "張慎紘": {
-    password: "870115", // 專屬密碼：87011
+    password: "881010", // 專屬密碼更新為數字
      investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/wT2mxT45/S-19832845.jpg",
@@ -127,7 +128,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         },
         {
           title: "我的建議",
-          content: "目前科技產業的長線動能還是很強，我們已經抓對了趨勢，可以善用年終紅包加碼，累積更多本金。除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利！"
+          content: "目前科技產業長線動能還是很強，我們已經抓對了趨勢，可以善用年終紅包加碼，累積更多本金。除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利！"
         }
       ]
     },
@@ -189,7 +190,7 @@ const App: React.FC = () => {
     if (entry) {
       const [name, data] = entry;
       setReportResult(data);
-      setFoundClientName(name); // 儲存找到的客戶姓名用於顯示
+      setFoundClientName(name); 
       setSearchError(false);
       setActiveCategory('investment');
       setShowReportPage(true);
@@ -201,7 +202,6 @@ const App: React.FC = () => {
 
   const avatarSource = contact.customAvatarUrl || `./profile.jpg?t=${cacheBuster}`;
 
-  // 獲取當前顯示的資料
   const currentCategoryData = reportResult ? reportResult[activeCategory] : null;
 
   return (
@@ -223,7 +223,7 @@ const App: React.FC = () => {
               <div className="w-8"></div>
             </div>
 
-            {/* 分類切換器 (右上區域) */}
+            {/* 分類切換器 */}
             <div className="px-6 mt-6">
               <div className="flex bg-white/5 p-1.5 rounded-2xl gap-2 border border-white/5 shadow-inner">
                 <button 
@@ -253,7 +253,6 @@ const App: React.FC = () => {
 
             <div className="flex-1 overflow-y-auto px-6 py-8" key={activeCategory}>
               <div className="relative z-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                {/* 客戶標題 */}
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-2">
                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white ${activeCategory === 'investment' ? 'bg-amber-500' : 'bg-blue-500'}`}>
@@ -267,7 +266,6 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 績效截圖 - 只有當不是「無」的時候才顯示 */}
                 {currentCategoryData.imageUrl !== "無" && (
                   <div className="mb-10">
                     <div className={`flex items-center gap-2 mb-4 ${activeCategory === 'investment' ? 'text-amber-500/70' : 'text-blue-500/70'}`}>
@@ -286,7 +284,6 @@ const App: React.FC = () => {
                   </div>
                 )}
 
-                {/* 分段報告內容 */}
                 <div className="space-y-6 mb-12">
                   <div className="flex items-center gap-3 mb-2">
                     <div className={`h-[1px] w-8 ${activeCategory === 'investment' ? 'bg-amber-500/50' : 'bg-blue-500/50'}`}></div>
@@ -313,7 +310,6 @@ const App: React.FC = () => {
                     </div>
                   ))}
 
-                  {/* 新年祝福語區塊 */}
                   <div className="pt-8 flex flex-col items-center animate-in fade-in zoom-in duration-1000 delay-500 fill-mode-both">
                     <div className="flex items-center gap-4 mb-2">
                       <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-amber-500/50"></div>
@@ -326,7 +322,6 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 底部按鈕 */}
                 <div className="flex flex-col items-center gap-6 border-t border-white/5 pt-10 mb-10 text-center">
                   <div className="relative">
                     <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full"></div>
@@ -351,7 +346,7 @@ const App: React.FC = () => {
           </div>
         )}
 
-        {/* 主頁部分 */}
+        {/* 主頁大頭貼部分 */}
         <div className="relative aspect-square w-full overflow-hidden bg-[#0c1425]">
           <div className="absolute inset-0 hex-pattern opacity-20"></div>
           <div className="absolute inset-0 flex items-start justify-center z-10">
@@ -362,11 +357,13 @@ const App: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c1425] via-transparent to-transparent opacity-100"></div>
           </div>
+          
           <div className="absolute top-6 right-6 z-30">
              <div className="px-3 py-1 bg-amber-500/80 backdrop-blur-md rounded-full shadow-lg border border-white/20">
                 <span className="text-[#0c1425] text-[10px] font-black tracking-widest uppercase">Certified RFA</span>
              </div>
           </div>
+
           <div className="absolute bottom-10 left-8 z-20 max-w-[280px]">
              <h1 className="text-5xl font-black text-white tracking-tighter mb-1 drop-shadow-2xl">
                {contact.name}
@@ -380,11 +377,15 @@ const App: React.FC = () => {
                <p className="text-gray-200 text-sm font-bold tracking-wide">
                  {contact.title}
                </p>
+               {/* 服務年資：已移至 RFA 下方並改回白字 */}
+               <p className="text-gray-400 text-[11px] font-black tracking-[0.2em] uppercase opacity-80 mt-1">
+                 服務年資：6年
+               </p>
              </div>
           </div>
         </div>
 
-        {/* 主頁內容區塊 */}
+        {/* 主頁內容 */}
         <div className="px-6 flex-1 bg-[#0c1425] relative z-30">
           <div className="pb-8 pt-6">
              <p className="text-gray-400 text-[15px] leading-relaxed italic border-l-2 border-amber-500/50 pl-4">
