@@ -217,6 +217,18 @@ const App: React.FC = () => {
                        </p>
                     </div>
                   )}
+
+                  {/* 新年祝福語區塊 */}
+                  <div className="pt-8 flex flex-col items-center animate-in fade-in zoom-in duration-1000 delay-500 fill-mode-both">
+                    <div className="flex items-center gap-4 mb-2">
+                      <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-amber-500/50"></div>
+                      <span className="text-amber-500 font-black text-xl tracking-[0.3em] drop-shadow-[0_0_8px_rgba(245,158,11,0.4)]">
+                        祝福您新年快樂
+                      </span>
+                      <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-amber-500/50"></div>
+                    </div>
+                    <p className="text-gray-500 text-[12px] font-medium tracking-widest uppercase opacity-60 italic">Happy New Year & Best Wishes</p>
+                  </div>
                 </div>
 
                 {/* 底部按鈕 */}
