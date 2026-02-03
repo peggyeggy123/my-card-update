@@ -111,25 +111,33 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     }
   },
-  "陳美玲": {
-    password: "660505", // 專屬密碼：660505
-    investment: {
-      date: "2025/02/10",
-      imageUrl: "https://api.a0.dev/assets/image?text=conservative%20investment%20portfolio%20dividend%20growth&aspect=16:9",
+  "張慎紘": {
+    password: "870115", // 專屬密碼：87011
+     investment: {
+      date: "2025/02/03",
+      imageUrl: "https://i.postimg.cc/wT2mxT45/S-19832845.jpg",
       sections: [
         {
-          title: "退休金準備進度",
-          content: "美玲您好，目前您的退休規劃帳戶達成率已來到 65%，本月配息收益穩定撥入，現金流狀況非常健康。"
+          title: "績效總結回顧",
+          content: "慎紘您好，這是為您整理的最新投資績效摘要。目前您的整體資產配置表現相當穩健！"
+        },
+        {
+          title: "核心持股表現",
+          content: "「安聯台灣大壩」表現相當亮眼，累積報酬率已來到 122.82%。總體帳戶價值從去年 2 月初的 258,534 成長到現在的 455,692。"
+        },
+        {
+          title: "我的建議",
+          content: "目前科技產業的長線動能還是很強，我們已經抓對了趨勢，可以善用年終紅包加碼，累積更多本金。除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利！"
         }
       ]
     },
     medical: {
-      date: "2025/02/10",
-      imageUrl: "https://api.a0.dev/assets/image?text=family%20health%20insurance%20plan%20overview&aspect=16:9",
+      date: "2025/02/03",
+      imageUrl: "無",
       sections: [
         {
-          title: "家庭保障總結",
-          content: "您的家庭保單檢議已完成。除了您個人的醫療保障外，孩子的新增意外險也已順利承保。"
+          title: "醫療保險資料",
+          content: "無"
         }
       ]
     }
