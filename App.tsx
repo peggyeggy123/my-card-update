@@ -43,12 +43,14 @@ interface CategoryData {
 }
 
 interface ClientReport {
+  password: string; // 每位客戶獨立的解鎖密碼
   investment: CategoryData;
   medical: CategoryData;
 }
 
 const CLIENT_REPORTS: Record<string, ClientReport> = {
   "余忠祐": {
+    password: "851224", // 專屬密碼：851224
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/QNS7zhP0/S-19816482.jpg",
@@ -79,6 +81,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "葉天暐": {
+    password: "860818", // 專屬密碼：860818
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/85tf3g40/S-19832835.jpg",
@@ -93,7 +96,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         },
         {
           title: "我的建議",
-          content: "目前科技產業的長線動能還是很強，我們已經抓對了趨勢，恭喜您也在今年多提撥一點資金，除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利，期待下次報表更漂亮！"
+          content: "目前科技產業的長線動能還是很強，我們已經抓對了趨勢，恭喜您也在今年多提撥一點資金，讓組合更完整。持續定期定額，讓時間幫我們複利！"
         }
       ]
     },
@@ -109,6 +112,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "陳美玲": {
+    password: "660505", // 專屬密碼：660505
     investment: {
       date: "2025/02/10",
       imageUrl: "https://api.a0.dev/assets/image?text=conservative%20investment%20portfolio%20dividend%20growth&aspect=16:9",
@@ -125,7 +129,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       sections: [
         {
           title: "家庭保障總結",
-          content: "您的家庭保單檢視已完成。除了您個人的醫療保障外，孩子的新增意外險也已順利承保。"
+          content: "您的家庭保單檢議已完成。除了您個人的醫療保障外，孩子的新增意外險也已順利承保。"
         }
       ]
     }
@@ -163,23 +167,28 @@ const App: React.FC = () => {
   const [searchError, setSearchError] = useState(false);
   const [showReportPage, setShowReportPage] = useState(false);
   const [activeCategory, setActiveCategory] = useState<'investment' | 'medical'>('investment');
+  const [foundClientName, setFoundClientName] = useState('');
 
   const handleSearch = () => {
     const input = searchName.trim();
     if (!input) return;
-    if (input.endsWith('123')) {
-      const actualName = input.slice(0, -3);
-      const result = CLIENT_REPORTS[actualName];
-      if (result) {
-        setReportResult(result);
-        setSearchError(false);
-        setActiveCategory('investment'); // 預設開啟投資報告
-        setShowReportPage(true);
-        return;
-      }
+
+    // 搜尋邏輯：檢查輸入是否等於「客戶姓名 + 該客戶自定義密碼」
+    const entry = Object.entries(CLIENT_REPORTS).find(([name, data]) => {
+      return input === name + data.password;
+    });
+
+    if (entry) {
+      const [name, data] = entry;
+      setReportResult(data);
+      setFoundClientName(name); // 儲存找到的客戶姓名用於顯示
+      setSearchError(false);
+      setActiveCategory('investment');
+      setShowReportPage(true);
+    } else {
+      setReportResult(null);
+      setSearchError(true);
     }
-    setReportResult(null);
-    setSearchError(true);
   };
 
   const avatarSource = contact.customAvatarUrl || `./profile.jpg?t=${cacheBuster}`;
@@ -242,7 +251,7 @@ const App: React.FC = () => {
                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white ${activeCategory === 'investment' ? 'bg-amber-500' : 'bg-blue-500'}`}>
                       {activeCategory === 'investment' ? <TrendingUp size={20} /> : <Activity size={20} />}
                     </div>
-                    <h3 className="text-2xl font-black text-white">{searchName.slice(0, -3)} <span className="text-sm opacity-40 font-normal">VIP 尊屬</span></h3>
+                    <h3 className="text-2xl font-black text-white">{foundClientName} <span className="text-sm opacity-40 font-normal">VIP 尊屬</span></h3>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500 text-[12px] font-bold tracking-widest uppercase">
                     <Clock size={12} />
@@ -404,7 +413,7 @@ const App: React.FC = () => {
             <div className="relative group">
               <input 
                 type="text" 
-                placeholder="在此輸入專屬識別內容解鎖報告" 
+                placeholder="輸入『姓名+密碼』如：余忠祐851224" 
                 value={searchName}
                 onChange={(e) => setSearchName(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
