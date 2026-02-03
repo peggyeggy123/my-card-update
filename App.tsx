@@ -51,7 +51,7 @@ interface ClientReport {
 
 const CLIENT_REPORTS: Record<string, ClientReport> = {
   "余忠祐": {
-    password: "851224", // 專屬密碼更新為數字
+    password: "WTYP", // 專屬密碼更新為數字
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/QNS7zhP0/S-19816482.jpg",
@@ -82,7 +82,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "葉天暐": {
-    password: "770808", // 專屬密碼更新為數字
+    password: "PGJE", // 專屬密碼更新為數字
     investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/85tf3g40/S-19832835.jpg",
@@ -113,7 +113,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     }
   },
   "張慎紘": {
-    password: "881010", // 專屬密碼更新為數字
+    password: "JENO", // 專屬密碼更新為數字
      investment: {
       date: "2025/02/03",
       imageUrl: "https://i.postimg.cc/wT2mxT45/S-19832845.jpg",
