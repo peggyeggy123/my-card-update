@@ -204,7 +204,8 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         }
       ]
     }
-  },"張慎紘": {
+  },
+  "張慎紘": {
     password: "JENO", 
      investment: {
       date: "2025/02/03",
@@ -234,6 +235,40 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
         }
       ]
     }
+  },
+  "陳大文": {
+    password: "ABCD",
+    investment: {
+      date: "2025/02/11",
+      imageUrl: "無",
+      sections: [
+        { title: "投資現況", content: "大文您好，這是為您預留的投資報告位置。請在此輸入您的資產分析內容。" }
+      ]
+    },
+    medical: {
+      date: "2025/02/11",
+      imageUrl: "無",
+      sections: [
+        { title: "保障摘要", content: "這是您的醫療保障摘要預留位置。" }
+      ]
+    }
+  },
+  "林秀英": {
+    password: "EFGH",
+    investment: {
+      date: "2025/02/11",
+      imageUrl: "無",
+      sections: [
+        { title: "投資現況", content: "秀英您好，這是為您預留的投資報告位置。請在此輸入您的資產分析內容。" }
+      ]
+    },
+    medical: {
+      date: "2025/02/11",
+      imageUrl: "無",
+      sections: [
+        { title: "保障摘要", content: "這是您的醫療保障摘要預留位置。" }
+      ]
+    }
   }
 };
 
@@ -243,7 +278,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
 const INITIAL_CONTACT: ContactInfo = {
   name: "洪薏晴",
   company: "三商美邦人壽",
-  title: "RFA 退休理財規劃師",
+  title: "RFA 退休理財規劃",
   slogan: "用專業回應您的信任，用溫度陪伴您的日常。",
   phone: "0917979019", 
   lineId: "t-4cUJ2Op1", 
