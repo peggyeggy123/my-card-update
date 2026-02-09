@@ -205,7 +205,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     }
   },
-  "張慎紘": {
+    "張慎紘": {
     password: "JENO", 
      investment: {
       date: "2025/02/03",
@@ -227,6 +227,37 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     },
     medical: {
       date: "2025/02/03",
+      imageUrl: "無",
+      sections: [
+        {
+          title: "醫療保險資料",
+          content: "無"
+        }
+      ]
+    }
+  },
+  "蘇建昌": {
+    password: "NCPW", 
+     investment: {
+      date: "2025/02/09",
+      imageUrl: "https://i.postimg.cc/26W1XjYt/IMG-0243.jpg",
+      sections: [
+        {
+          title: "績效總結回顧",
+          content: "建昌您好，年前特別為您更新定期定額績效。在過去一年的市場波動中，目前您的整體資產配置表現相當亮眼！這就是堅持長期投資最好的回報！"
+        },
+        {
+          title: "核心持股表現",
+          content: "目前標的連結50%台股+50%美股基金，其中「安聯台灣大壩」，這檔台股基金累積報酬率已來到 121.43%。總體帳戶價值從去年 2 月初的 133,242 成長到現在的 285,817。"
+        },
+        {
+          title: "我的建議",
+          content: "很開心能陪您一起見證這段時間的資產成長，這證明了我們當時的選擇是正確的！目前科技產業的長線動能還是很強，已經抓對了趨勢，可以善用年終紅包加碼，累積更多本金。除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利！"
+        }
+      ]
+    },
+    medical: {
+      date: "2025/02/09",
       imageUrl: "無",
       sections: [
         {
