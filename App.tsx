@@ -310,7 +310,7 @@ const INITIAL_CONTACT: ContactInfo = {
   name: "洪薏晴",
   company: "三商美邦人壽",
   title: "RFA 退休理財規劃",
-  slogan: "用專業回應您的信任，用溫度陪伴您的日常。",
+  slogan: "", // 已刪除格言
   phone: "0917979019", 
   lineId: "t-4cUJ2Op1", 
   instagramId: "ching_1777", 
@@ -546,13 +546,16 @@ const App: React.FC = () => {
 
         {/* 主頁內容 */}
         <div className="px-6 flex-1 bg-[#0c1425] relative z-30">
-          <div className="pb-8 pt-6">
-             <p className="text-gray-400 text-[15px] leading-relaxed italic border-l-2 border-amber-500/50 pl-4">
-               "{contact.slogan}"
-             </p>
-          </div>
+          {/* 顧問格言區塊 - 當格言為空時自動隱藏 */}
+          {contact.slogan && (
+            <div className="pb-8 pt-6">
+               <p className="text-gray-400 text-[15px] leading-relaxed italic border-l-2 border-amber-500/50 pl-4">
+                 "{contact.slogan}"
+               </p>
+            </div>
+          )}
 
-          <div className="grid grid-cols-3 gap-3 mb-10">
+          <div className={`grid grid-cols-3 gap-3 mb-10 ${!contact.slogan ? 'mt-8' : ''}`}>
             <a href={`tel:${contact.phone}`} className="flex flex-col items-center gap-2 group">
               <div className="w-full h-14 flex items-center justify-center bg-amber-500 rounded-2xl text-[#0c1425] shadow-lg shadow-amber-500/20 group-active:scale-95 transition-all">
                 <Phone size={24} strokeWidth={2.5} />
