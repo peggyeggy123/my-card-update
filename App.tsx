@@ -267,6 +267,68 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     }
   },
+  "胡子涵": {
+    password: "PFBQ", 
+     investment: {
+      date: "2025/02/10",
+      imageUrl: "https://i.postimg.cc/pVJxzp8W/IMG-0254.jpg",
+      sections: [
+        {
+          title: "績效總結回顧",
+          content: "子涵您好，年前特別為您更新定期定額績效。在過去一年的市場波動中，目前您的整體資產配置表現相當亮眼！這就是堅持長期投資最好的回報！"
+        },
+        {
+          title: "核心持股表現",
+          content: "目前標的連結50%台股+50%美股基金，其中「安聯台灣大壩」，這檔台股基金累積報酬率已來到 112.21%。總體帳戶價值從去年 2 月初的 118,763 成長到現在的 233,128。"
+        },
+        {
+          title: "我的建議",
+          content: "很開心能陪您一起見證這段時間的資產成長，這證明了我們當時的選擇是正確的！目前科技產業的長線動能還是很強，已經抓對了趨勢，可以善用年終紅包加碼，累積更多本金。除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利！"
+        }
+      ]
+    },
+    medical: {
+      date: "2025/02/10",
+      imageUrl: "無",
+      sections: [
+        {
+          title: "醫療保險資料",
+          content: "無"
+        }
+      ]
+    }
+  },
+  "潘韻婷": {
+    password: "BELC", 
+     investment: {
+      date: "2025/02/10",
+      imageUrl: "https://i.postimg.cc/fbvpkgk5/IMG-0255.jpg",
+      sections: [
+        {
+          title: "績效總結回顧",
+          content: "小潘您好，年前特別為您更新定期定額績效。在過去一年的市場波動中，目前您的整體資產配置表現相當亮眼！這就是堅持長期投資最好的回報！"
+        },
+        {
+          title: "核心持股表現",
+          content: "目前標的連結50%台股+50%美股基金，其中「安聯台灣大壩」，這檔台股基金累積報酬率已來到 131.67%。總體帳戶價值從去年 2 月初的 99,161 成長到現在的 172,415。"
+        },
+        {
+          title: "我的建議",
+          content: "很開心能陪您一起見證這段時間的資產成長，這證明了我們當時的選擇是正確的！目前科技產業的長線動能還是很強，已經抓對了趨勢，可以善用年終紅包加碼，累積更多本金。除了守住原本的獲利，也配置一些不同標的來讓組合更完整。持續定期定額，讓時間幫我們複利！"
+        }
+      ]
+    },
+    medical: {
+      date: "2025/02/10",
+      imageUrl: "無",
+      sections: [
+        {
+          title: "醫療保險資料",
+          content: "無"
+        }
+      ]
+    }
+  },
   "陳大文": {
     password: "ABCD",
     investment: {
@@ -284,6 +346,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     }
   },
+  
   "林秀英": {
     password: "EFGH",
     investment: {
