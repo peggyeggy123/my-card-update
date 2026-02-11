@@ -53,7 +53,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "余忠祐": {
     password: "WTYP", 
     investment: {
-      date: "2025/02/03",
+      date: "2026/02/03",
       imageUrl: "https://i.postimg.cc/QNS7zhP0/S-19816482.jpg",
       sections: [
         {
@@ -71,7 +71,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/03",
+      date: "2026/02/03",
       imageUrl: "無",
       sections: [
         {
@@ -84,7 +84,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "葉天暐": {
     password: "PGJE", 
     investment: {
-      date: "2025/02/03",
+      date: "2026/02/03",
       imageUrl: "https://i.postimg.cc/85tf3g40/S-19832835.jpg",
       sections: [
         {
@@ -102,7 +102,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/03",
+      date: "2026/02/03",
       imageUrl: "無",
       sections: [
         {
@@ -115,7 +115,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "蘇暐翔": {
     password: "HFWP", 
     investment: {
-      date: "2025/02/04",
+      date: "2026/02/04",
       imageUrl: "https://i.postimg.cc/3JnFr1VL/IMG-0226.jpg",
       sections: [
         {
@@ -133,7 +133,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/04",
+      date: "2026/02/04",
       imageUrl: "無",
       sections: [
         {
@@ -146,7 +146,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "王韻雅": {
     password: "DVUL", 
     investment: {
-      date: "2025/02/04",
+      date: "2026/02/04",
       imageUrl: "https://i.postimg.cc/KzKS20YM/IMG-0227.jpg",
       sections: [
         {
@@ -164,7 +164,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/04",
+      date: "2026/02/04",
       imageUrl: "無",
       sections: [
         {
@@ -177,7 +177,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
  "黃志宇": {
     password: "NFLW", 
     investment: {
-      date: "2025/02/04",
+      date: "2026/02/04",
       imageUrl: "https://i.postimg.cc/K8YyFvVM/IMG-0242.avif",
       sections: [
         {
@@ -195,7 +195,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/04",
+      date: "2026/02/04",
       imageUrl: "無",
       sections: [
         {
@@ -208,7 +208,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
     "張慎紘": {
     password: "JENO", 
      investment: {
-      date: "2025/02/03",
+      date: "2026/02/03",
       imageUrl: "https://i.postimg.cc/wT2mxT45/S-19832845.jpg",
       sections: [
         {
@@ -226,7 +226,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/03",
+      date: "2026/02/03",
       imageUrl: "無",
       sections: [
         {
@@ -239,7 +239,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "蘇建昌": {
     password: "NCPW", 
      investment: {
-      date: "2025/02/09",
+      date: "2026/02/09",
       imageUrl: "https://i.postimg.cc/26W1XjYt/IMG-0243.jpg",
       sections: [
         {
@@ -257,7 +257,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/09",
+      date: "2026/02/09",
       imageUrl: "無",
       sections: [
         {
@@ -270,7 +270,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "胡子涵": {
     password: "PFBQ", 
      investment: {
-      date: "2025/02/10",
+      date: "2026/02/10",
       imageUrl: "https://i.postimg.cc/pVJxzp8W/IMG-0254.jpg",
       sections: [
         {
@@ -288,7 +288,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/10",
+      date: "2026/02/10",
       imageUrl: "無",
       sections: [
         {
@@ -301,7 +301,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "潘韻婷": {
     password: "BELC", 
      investment: {
-      date: "2025/02/10",
+      date: "2026/02/10",
       imageUrl: "https://i.postimg.cc/fbvpkgk5/IMG-0255.jpg",
       sections: [
         {
@@ -319,7 +319,7 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
       ]
     },
     medical: {
-      date: "2025/02/10",
+      date: "2026/02/10",
       imageUrl: "無",
       sections: [
         {
@@ -332,14 +332,14 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "陳大文": {
     password: "ABCD",
     investment: {
-      date: "2025/02/11",
+      date: "2026/02/11",
       imageUrl: "無",
       sections: [
         { title: "投資現況", content: "大文您好，這是為您預留的投資報告位置。請在此輸入您的資產分析內容。" }
       ]
     },
     medical: {
-      date: "2025/02/11",
+      date: "2026/02/11",
       imageUrl: "無",
       sections: [
         { title: "保障摘要", content: "這是您的醫療保障摘要預留位置。" }
@@ -350,14 +350,14 @@ const CLIENT_REPORTS: Record<string, ClientReport> = {
   "林秀英": {
     password: "EFGH",
     investment: {
-      date: "2025/02/11",
+      date: "2026/02/11",
       imageUrl: "無",
       sections: [
         { title: "投資現況", content: "秀英您好，這是為您預留的投資報告位置。請在此輸入您的資產分析內容。" }
       ]
     },
     medical: {
-      date: "2025/02/11",
+      date: "2026/02/11",
       imageUrl: "無",
       sections: [
         { title: "保障摘要", content: "這是您的醫療保障摘要預留位置。" }
