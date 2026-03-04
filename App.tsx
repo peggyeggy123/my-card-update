@@ -754,16 +754,8 @@ const App: React.FC = () => {
         )}
 
         {/* 主頁大頭貼部分 */}
-        <div className="relative aspect-square w-full overflow-hidden bg-[#0c1425]">
-          <div className="absolute inset-0 hex-pattern opacity-20"></div>
-          <div className="absolute inset-0 flex items-start justify-center z-10">
-            <img 
-              src={avatarSource}
-              alt={contact.name} 
-              className="h-full w-full object-cover object-top"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0c1425] via-transparent to-transparent opacity-100"></div>
-          </div>
+        <div className="relative pt-16 pb-12 flex flex-col items-center bg-[#0c1425] overflow-hidden">
+          <div className="absolute inset-0 hex-pattern opacity-10 pointer-events-none"></div>
           
           <div className="absolute top-6 right-6 z-30">
              <div className="px-3 py-1 bg-amber-500/80 backdrop-blur-md rounded-full shadow-lg border border-white/20">
@@ -771,22 +763,34 @@ const App: React.FC = () => {
              </div>
           </div>
 
-          <div className="absolute bottom-10 left-8 z-20 max-w-[280px]">
-             <h1 className="text-5xl font-black text-white tracking-tighter drop-shadow-2xl mb-1 animate-in fade-in slide-in-from-bottom-2 duration-1000">
+          {/* Profile Image - Circular, 42% width, centered */}
+          <div className="relative z-20 mb-8 w-full flex justify-center">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-500/10 blur-3xl rounded-full"></div>
+            <div className="w-[42%] aspect-square relative group">
+               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500/20 to-transparent animate-pulse"></div>
+               <img 
+                src={avatarSource}
+                alt={contact.name} 
+                className="w-full h-full object-cover rounded-full border-4 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10"
+              />
+            </div>
+          </div>
+
+          <div className="z-20 text-center px-6">
+             <h1 className="text-4xl font-black text-white tracking-tighter mb-2 animate-in fade-in slide-in-from-bottom-2 duration-1000">
                {contact.name}
              </h1>
              
-             <div className="space-y-1">
+             <div className="space-y-2 flex flex-col items-center">
                <div className="flex items-center gap-2">
-                  <span className="bg-amber-500 text-[#0c1425] px-2 py-0.5 rounded text-[12px] font-black uppercase tracking-tight shadow-lg">
+                  <span className="bg-amber-500 text-[#0c1425] px-3 py-0.5 rounded-full text-[12px] font-black uppercase tracking-tight shadow-lg">
                     {contact.company}
                   </span>
                </div>
-               <p className="text-gray-200 text-sm font-bold tracking-wide">
+               <p className="text-gray-200 text-base font-bold tracking-wide">
                  {contact.title}
                </p>
-               {/* 服務年資：維持在 RFA 下方的白字樣式 */}
-               <p className="text-gray-400 text-[11px] font-black tracking-[0.2em] uppercase opacity-70 mt-1">
+               <p className="text-gray-400 text-[11px] font-black tracking-[0.2em] uppercase opacity-70">
                  服務年資：6年
                </p>
              </div>
